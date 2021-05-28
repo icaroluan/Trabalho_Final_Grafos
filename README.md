@@ -15,6 +15,8 @@
 ### Community
 - Este pacote implementa detecção de comunidade.
 - O nome do pacote é comunidade, mas refere-se a python-louvain em pypi
+- Utilizo esse pacote para obter a partição dos nós do gráfico que maximiza a modularidade, utilizando as heuristicas de Louvain. Sendo a partição de maior modularidade, ou seja, a partição mais alta do dendrograma gerado pelo algoritmo Louvain.
+
 
 [Link para documentação Community](https://python-louvain.readthedocs.io/en/latest/api.html)
 
@@ -33,7 +35,6 @@ Software para redes complexas:
  * Os benefícios adicionais do Python incluem prototipagem rápida, fácil de ensinar e multiplataforma
 
 [Link para documentação Networkx](https://networkx.org/documentation/stable/tutorial.html)
-
 
 ## Corretude
 
