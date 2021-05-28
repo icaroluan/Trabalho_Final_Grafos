@@ -45,6 +45,8 @@ Na implementação da ferramenta foi usado o gerador de grafo do pacote Networkx
 
 ## Introdução sobre Modelo Barabási-Albert
 
+** Sera alterado com minha compreenssão do tema 
+
 Redes Complexas podem ser utilizadas para estudar uma variedade de assuntos, desde problemas
 tecnológicos a de saúde pública. Um dos modelos de redes complexas mais famoso é o modelo de
 Barabási-Albert, proposto inicialmente para reproduzir propriedades da rede mundial de computadores. Este modelo constrói redes através da sucessiva adição de nós, seguindo o princípio da
@@ -59,6 +61,7 @@ a efeitos de tamanho finito. Nesse contexto, soluções analíticas capazes de d
 Barabási-Albert para redes pequenos são bem vindas, pois permitiriam compreender a extensão
 dos efeitos de tamanho finito e, portanto, poderiam ser comparadas com redes reais pequenas.
 
+[Fonte](https://lume.ufrgs.br/handle/10183/150235)
 
 ## Corretude
 
