@@ -1,7 +1,7 @@
 # Trabalho Final Grafos
 
 ## Passo para execução
-- Primeiro tenha uma versão python instalado
+- Primeiro tenha uma versão python instalado [link tutorial](https://realpython.com/installing-python/)
 - Depois de o comando no pip install -r requirements.txt
 - Compile o arquivo como o comando python gerador_modelo_ba.py
 

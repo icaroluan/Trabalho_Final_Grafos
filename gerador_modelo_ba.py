@@ -1,8 +1,9 @@
 from tkinter import *
 from tkinter import messagebox
+from math import  sin
 from matplotlib import pyplot as plt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from community import community_louvain
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import networkx as nx
 
 
@@ -77,6 +78,9 @@ def plot(G, seed):
     partition = community_louvain.best_partition(G, random_state=seed)
     pos = community_layout(G, partition, seed)
     nx.draw(G, pos, node_color=list(partition.values()))
+    
+    # Sem o uso da heuristicas de Louvain para as partições
+    #nx.draw(G, with_labels=True)
     return plt.show()
 
 def main():
@@ -91,9 +95,10 @@ class Window:
         self.root.title("Gerador de Grafo Modelo BA(Barabási Albert)")
         self.root.geometry('700x100')
         
-        self.m = 50.5
-        self.n = 1.2
-        self.seed = 42
+        # Valores iniciais setados
+        self.m = 50
+        self.n = 1
+        self.seed = 52
         
         # Quantidade de Nós
         Label(self.root, text = "Quantidade de Nós(n)").grid(row=0, column=0)
@@ -106,20 +111,35 @@ class Window:
         self.m_entry = Entry(self.root, width = 5)
         self.m_entry.grid(row=1, column=2)
         Label(self.root, text="Número de arestas que seram adicionados para os novos nós").grid(row=1, column=3)
-        button2 = Button(self.root, text="Sair", command = self.on_closing).grid(row=5, column=3, pady=10)
+        
         # Botão
         button1 = Button(self.root, text="Criar Grafo", command = self.update_values)
         button1.grid(row=5, column=2, pady=10)
+        
+        button2 = Button(self.root, text="Sair", command = self.on_closing).grid(row=5, column=3, pady=10)
         self.root.bind("<Return>", self.update_values)
         self.plot_values()
+
+        
         
         pass
+
+    def validation_entry(self):
+        if( self.n_entry.get().isdigit() and self.m_entry.get().isdigit()):
+            return True
+        else:
+            messagebox.showerror('Erro','Entre apenas com numeros inteiros')
+            return False
+
             
     def update_values(self, event=None):
-        self.n = int(self.n_entry.get())
-        self.m = int(self.m_entry.get())
-        self.plot_values()
-        return None
+        if self.validation_entry() == False:
+            return None
+        else:
+            self.n = int(self.n_entry.get())
+            self.m = int(self.m_entry.get())
+            self.plot_values()
+            return None
 
     def plot_values(self):
         G_pa = generate_pa(self.m, self.n, self.seed)
