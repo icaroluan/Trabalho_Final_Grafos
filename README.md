@@ -45,21 +45,9 @@ Na implementação da ferramenta foi usado o gerador de grafo do pacote Networkx
 
 ## Introdução sobre Modelo Barabási-Albert
 
-** Sera alterado com minha compreenssão do tema 
 
-Redes Complexas podem ser utilizadas para estudar uma variedade de assuntos, desde problemas
-tecnológicos a de saúde pública. Um dos modelos de redes complexas mais famoso é o modelo de
-Barabási-Albert, proposto inicialmente para reproduzir propriedades da rede mundial de computadores. Este modelo constrói redes através da sucessiva adição de nós, seguindo o princípio da
-adesão preferencial. Este princípio afirma que a probabilidade de um nó receber um vizinho é proporcional ao número de vizinhos que esse nó já possui. O principal resultado deste modelo é uma
-distribuição de grau que segue uma lei de potência. Uma vez que diversas redes reais apresentam
-distribuições de grau que se aproximam de uma lei de potência o princípio de adesão preferencial
-do modelo de Barabási-Albert passou a ser considerado como um dos principais mecanismos por
-trás da formação das redes reais. A comparação dessas redes com o modelo de Barabási-Albert é
-controversa, uma vez que suas distribuições de grau não são perfeitamente aproximadas por uma
-lei de potência. Entretanto, redes geradas atráves do próprio modelo apresentam desvios devido
-a efeitos de tamanho finito. Nesse contexto, soluções analíticas capazes de descrever o modelo de
-Barabási-Albert para redes pequenos são bem vindas, pois permitiriam compreender a extensão
-dos efeitos de tamanho finito e, portanto, poderiam ser comparadas com redes reais pequenas.
+O tema de redes complexas podem ser aplicados em varios estudos com na area de transporte, tecnologia a de saúde.
+Um dos mais famosos modelos de redes complexas e do de Barabási-Albert, seu proposito inicialmente foi para a reprodução das prorpiedades da rede mundial de computadores. A partir desse modelo é contruido redes atráves de sucessias adições de nós, utiizando o princípio da adesão preferencial. O principio afirma que a probabilidade de um nó receber um vizinho é proporcional ao seu número de vizinhos que esse nó já possui. O resusltado principal do modelo é uma distribuição de grau que segue uma [lei de potência](https://en.wikipedia.org/wiki/Power_law). Quando ocorre que diversas redes reais apresentam distribuições de grau que se aproximan de uma lei de potência o princípio de adesão preferencial do modelo de Barabási-Albert, passou a ser considerado com um pricnipais mecanimos de formação das redes reais.
 
 [Fonte](https://lume.ufrgs.br/handle/10183/150235)
 

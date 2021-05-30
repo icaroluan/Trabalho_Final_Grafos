@@ -1,9 +1,10 @@
 from tkinter import *
 from tkinter import messagebox
+import tkinter as tk
 from math import  sin
 from matplotlib import pyplot as plt
 from community import community_louvain
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+#from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import networkx as nx
 
 
@@ -77,8 +78,8 @@ def plot(G, seed):
     plt.clf()
     partition = community_louvain.best_partition(G, random_state=seed)
     pos = community_layout(G, partition, seed)
-    nx.draw(G, pos, node_color=list(partition.values()))
-    
+    nx.draw(G, pos, with_labels=True, node_color=list(partition.values()))
+
     # Sem o uso da heuristicas de Louvain para as partições
     #nx.draw(G, with_labels=True)
     return plt.show()
@@ -93,30 +94,37 @@ class Window:
     def __init__(self, root):
         self.root = root
         self.root.title("Gerador de Grafo Modelo BA(Barabási Albert)")
-        self.root.geometry('700x100')
+        self.root.geometry('500x200')
         
         # Valores iniciais setados
         self.m = 50
         self.n = 1
         self.seed = 52
         
+        frame_inputs = Frame(self.root)
+        frame_labels = Frame(self.root)
+
         # Quantidade de Nós
-        Label(self.root, text = "Quantidade de Nós(n)").grid(row=0, column=0)
-        self.n_entry = Entry(self.root, width = 5)
+        Label(frame_inputs, text = "Quantidade de Nós(n)").grid(row=0, column=0)
+        self.n_entry = Entry(frame_inputs, width = 5)
         self.n_entry.grid(row=0, column = 2)
-        Label(self.root, text = "O número de Nós não pode ser menor que a quantidade de arestas").grid(row=0, column=3)
+        Label(frame_labels, text = "O número de Nós não pode ser menor que a quantidade de arestas").grid(row=6, column=0)
         
         # Número de Arestas
-        Label(self.root, text = "Número de Arestas(m)").grid(row=1, column=0)
-        self.m_entry = Entry(self.root, width = 5)
+        Label(frame_inputs, text = "Número de Arestas(m)").grid(row=1, column=0)
+        self.m_entry = Entry(frame_inputs, width = 5)
         self.m_entry.grid(row=1, column=2)
-        Label(self.root, text="Número de arestas que seram adicionados para os novos nós").grid(row=1, column=3)
+        Label(frame_labels, text="Número de arestas que seram adicionados para os novos nós").grid(row=7, column=0)
         
         # Botão
-        button1 = Button(self.root, text="Criar Grafo", command = self.update_values)
-        button1.grid(row=5, column=2, pady=10)
+        button1 = Button(frame_inputs, text="Criar Grafo", command = self.update_values)
+        button1.grid(row=3, column=0, pady=10)
         
-        button2 = Button(self.root, text="Sair", command = self.on_closing).grid(row=5, column=3, pady=10)
+        button2 = Button(frame_inputs, text="Sair", command = self.on_closing).grid(row=3, column=2)
+
+        frame_inputs.pack()
+        frame_labels.pack()
+
         self.root.bind("<Return>", self.update_values)
         self.plot_values()
 
@@ -143,9 +151,8 @@ class Window:
 
     def plot_values(self):
         G_pa = generate_pa(self.m, self.n, self.seed)
-        chart = FigureCanvasTkAgg(plot(G_pa, self.seed), self.root)
-        chart.get_tk_widget().grid(row = 5, column = 0)
-        plt.grid()
+        plot(G_pa, self.seed)
+
         return None
 
     def on_closing(self, event=None):
