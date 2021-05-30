@@ -74,15 +74,16 @@ def generate_pa(m, n, seed):
     else:
         return nx.generators.random_graphs.barabasi_albert_graph(m, n, seed)
 
-def plot(G, seed):
-    plt.clf()
+def plot(G, seed, m, n):
+    fig = plt
+    fig.close()
+    fig = plt.figure(num='Modelo BA n={0} e m={1}'.format(n, m))
     partition = community_louvain.best_partition(G, random_state=seed)
     pos = community_layout(G, partition, seed)
     nx.draw(G, pos, with_labels=True, node_color=list(partition.values()))
-
     # Sem o uso da heuristicas de Louvain para as partições
     #nx.draw(G, with_labels=True)
-    return plt.show()
+    return fig.show()
 
 def main():
     root = Tk()
@@ -108,14 +109,17 @@ class Window:
         Label(frame_inputs, text = "Quantidade de Nós(n)").grid(row=0, column=0)
         self.n_entry = Entry(frame_inputs, width = 5)
         self.n_entry.grid(row=0, column = 2)
-        Label(frame_labels, text = "O número de Nós não pode ser menor que a quantidade de arestas").grid(row=6, column=0)
+        Label(frame_labels, text = "O número de Nós não pode ser menor que a quantidade de arestas").grid(row=0, column=0)
         
         # Número de Arestas
         Label(frame_inputs, text = "Número de Arestas(m)").grid(row=1, column=0)
         self.m_entry = Entry(frame_inputs, width = 5)
         self.m_entry.grid(row=1, column=2)
-        Label(frame_labels, text="Número de arestas que seram adicionados para os novos nós").grid(row=7, column=0)
+        Label(frame_labels, text="Número de arestas que seram adicionados para os novos nós").grid(row=1, column=0)
         
+        # Labels
+        Label(frame_labels, text="Número de arestas que seram adicionados para os novos nós").grid(row=3, column=0)
+
         # Botão
         button1 = Button(frame_inputs, text="Criar Grafo", command = self.update_values)
         button1.grid(row=3, column=0, pady=10)
@@ -151,7 +155,7 @@ class Window:
 
     def plot_values(self):
         G_pa = generate_pa(self.m, self.n, self.seed)
-        plot(G_pa, self.seed)
+        plot(G_pa, self.seed, self.m, self.n)
 
         return None
 
