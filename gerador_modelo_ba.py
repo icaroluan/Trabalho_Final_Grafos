@@ -109,16 +109,16 @@ class Window:
         Label(frame_inputs, text = "Quantidade de Nós(n)").grid(row=0, column=0)
         self.n_entry = Entry(frame_inputs, width = 5)
         self.n_entry.grid(row=0, column = 2)
-        Label(frame_labels, text = "O número de Nós não pode ser menor que a quantidade de arestas").grid(row=0, column=0)
+        Label(frame_labels, text = "O número de Nós(n) não pode ser menor que a quantidade de arestas").grid(row=0, column=0)
         
         # Número de Arestas
         Label(frame_inputs, text = "Número de Arestas(m)").grid(row=1, column=0)
         self.m_entry = Entry(frame_inputs, width = 5)
         self.m_entry.grid(row=1, column=2)
-        Label(frame_labels, text="Número de arestas que seram adicionados para os novos nós").grid(row=1, column=0)
+        Label(frame_labels, text="Número de arestas(m) tem que ser maior igual a o número de nos").grid(row=1, column=0)
         
         # Labels
-        Label(frame_labels, text="Número de arestas que seram adicionados para os novos nós").grid(row=3, column=0)
+        Label(frame_labels, text="Grafo com entrada padrão Número de nós = {0} e Número des arestas = {1}".format(self.n, self.m)).grid(row=3, column=0)
 
         # Botão
         button1 = Button(frame_inputs, text="Criar Grafo", command = self.update_values)
