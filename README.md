@@ -53,4 +53,13 @@ Um dos mais famosos modelos de redes complexas e do de Barabási-Albert, seu pro
 
 ## Corretude
 
+### Algoritmo
+
+Para o seu processo de crescimento inicia-se com uma rede arbitrária de n0 nós. Então novos nós são adicionados a rede, um a um, e cada um desses novos nós faz conexões com outros x nós já existentes, onde x é uma variável que pertence ao modelo. A probabilidade do novo nó se conectar a um outro nó i qualquer já presente na rede é proporcional ao número de ligações que o nó i possui. Formalmente, a probabilidade pi de que o novo nó irá se conectar a um vértice i que já existe é representado na imagem abaixo.
+Sendo o valor de ki o grau do nó i e a soma no denominador, realizada sobre todos os nós j já existentes na rede, é a normalização da probabilidade. Esse processo de escolha de conexão é repetido para cada uma das ligações x que o novo nó irá fazer.
+![Formula de pi]()
+Este formato os nós com o grau maior, sendo aqueles com muitas conexões, tendem a acumular rapidamente ainda mais ligações, enquanto nós com grau baixo, contendo poucas ligações, tendo uma baixa probabilidade de serem escolhidos como o destino para um novo link. Assim, os novos nós tem uma preferência para unir-se aos nós já fortemente ligadas. Note também que há um valor mínimo para o grau de um nó, sendo ele igual ao parâmetro x. O grau médio <k> da rede pode ser calculado analiticamente, sendo <k> = 2x.
+
+[Fonte modelo Barabási Albert](https://pt.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model)
+
 [Link Apresentação Youtube](https://www.youtube.com/)

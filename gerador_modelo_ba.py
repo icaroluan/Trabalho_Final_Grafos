@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
-from math import  sin
 from matplotlib import pyplot as plt
 from community import community_louvain
 #from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -140,7 +139,7 @@ class Window:
         if( self.n_entry.get().isdigit() and self.m_entry.get().isdigit()):
             return True
         else:
-            messagebox.showerror('Erro','Entre apenas com numeros inteiros')
+            messagebox.showerror('Erro','Entre apenas com números inteiros')
             return False
 
             
