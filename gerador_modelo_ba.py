@@ -9,10 +9,10 @@ import networkx as nx
 
 
 def check_N_M(n, m):
-    if( m>= 1 and m < n):
-        messagebox.showerror('Erro','Modelo deve ter m>=1 e m < n = {0}, m = {1}'.format(n,m))
-        return True
-    return False
+    if(  m>= 1 and m < n ):
+        return False
+    messagebox.showerror('Erro','Modelo deve ter m>=1 e m < n = {0}, m = {1}'.format(n,m))
+    return True
 
 
 def community_layout(g, partition, seed=42):
@@ -67,14 +67,14 @@ def _position_nodes(g, partition, **kwargs):
 
     return pos
 
-def generate_pa(m, n, seed):
+def generate_pa(n, m, seed):
     if check_N_M(n,m):
-        messagebox.showinfo('Informação','Modelo de entrada padrão n = {0}, m = {1}'.format(1,50))
+        messagebox.showinfo('Informação','Modelo de entrada padrão n = {0}, m = {1}'.format(50,1))
         return nx.generators.random_graphs.barabasi_albert_graph(50, 1, seed)
     else:
-        return nx.generators.random_graphs.barabasi_albert_graph(m, n, seed)
+        return nx.generators.random_graphs.barabasi_albert_graph(n, m, seed)
 
-def plot(G, seed, m, n):
+def plot(G, seed, n, m):
     fig = plt
     fig.close()
     fig = plt.figure(num='Modelo BA n={0} e m={1}'.format(n, m))
@@ -98,8 +98,8 @@ class Window:
         self.root.geometry('500x200')
         
         # Valores iniciais setados
-        self.m = 50
-        self.n = 1
+        self.m = 1
+        self.n = 50
         self.seed = 52
         
         frame_inputs = Frame(self.root)
@@ -115,7 +115,7 @@ class Window:
         Label(frame_inputs, text = "Número de Arestas(m)").grid(row=1, column=0)
         self.m_entry = Entry(frame_inputs, width = 5)
         self.m_entry.grid(row=1, column=2)
-        Label(frame_labels, text="Número de arestas(m) tem que ser maior igual a o número de nos").grid(row=1, column=0)
+        Label(frame_labels, text="Número de arestas(m) tem que ser maior igual a 1 é menor que número de nos").grid(row=1, column=0)
         
         # Labels
         Label(frame_labels, text="Grafo com entrada padrão Número de nós = {0} e Número des arestas = {1}".format(self.n, self.m)).grid(row=3, column=0)
@@ -154,8 +154,8 @@ class Window:
             return None
 
     def plot_values(self):
-        G_pa = generate_pa(self.m, self.n, self.seed)
-        plot(G_pa, self.seed, self.m, self.n)
+        G_pa = generate_pa(self.n, self.m, self.seed)
+        plot(G_pa, self.seed, self.n, self.m)
 
         return None
 
