@@ -58,9 +58,8 @@ Na implementação da ferramenta foi usado o gerador de grafo do pacote Networkx
 
 ## Introdução sobre Modelo Barabási-Albert
 
-
 O tema de redes complexas podem ser aplicados em varios estudos com na area de transporte, tecnologia a de saúde.
-Um dos mais famosos modelos de redes complexas e do de Barabási-Albert, seu proposito inicialmente foi para a reprodução das prorpiedades da rede mundial de computadores. A partir desse modelo é contruido redes atráves de sucessias adições de nós, utiizando o princípio da adesão preferencial. O principio afirma que a probabilidade de um nó receber um vizinho é proporcional ao seu número de vizinhos que esse nó já possui. O resusltado principal do modelo é uma distribuição de grau que segue uma [lei de potência](https://en.wikipedia.org/wiki/Power_law). Quando ocorre que diversas redes reais apresentam distribuições de grau que se aproximan de uma lei de potência o princípio de adesão preferencial do modelo de Barabási-Albert, passou a ser considerado com um pricnipais mecanimos de formação das redes reais.
+Um dos mais famosos modelos de redes complexas é a de Barabási-Albert, seu proposito inicialmente foi para a reprodução das propriedades da rede mundial de computadores. A partir desse modelo é construido redes atráves de sucessivas adições de nós, utilizando o princípio da adesão preferencial. O principio afirma que a probabilidade de um nó receber um vizinho é proporcional ao seu número de vizinhos que esse nó já possui. O resusltado principal do modelo é uma distribuição de grau que segue uma [lei de potência](https://en.wikipedia.org/wiki/Power_law). Quando ocorre que diversas redes reais apresentam distribuições de grau que se aproxima de uma lei de potência o princípio de adesão preferencial do modelo de Barabási-Albert, passou a ser considerado com um dos principais mecanimos de formação das redes reais.
 
 [Fonte](https://lume.ufrgs.br/handle/10183/150235)
 
