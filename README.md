@@ -1,14 +1,22 @@
 # Trabalho Final Grafos
 
 ## Passo para execução
-- Primeiro tenha uma versão python instalado [link tutorial](https://realpython.com/installing-python/)
-- Depois de o comando no pip install -r requirements.txt
-- Compile o arquivo como o comando python gerador_modelo_ba.py
 
-* Obs1: Ocorrendo problemas na instalação do tkinter para a versão linux adicionar faça comando sudo apt-get install python3-tk
-[Link stackoverflow com explicação](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)
+#### Windows
+- Primeiro tenha uma versão python instalada [link tutorial](https://realpython.com/installing-python/)
+- Depois de o comando pip install -r requirements.txt
+- Compile o arquivo com o comando python gerador_modelo_ba.py
 
-* Obs2: Ocorrendo erro na instalação do tkinter seguir tutorial neste  [link](https://tkdocs.com/tutorial/install.html)
+#### Linux
+ - Após o primeiro passo de instalação do python
+ - Para instalar o Tkinter de o comando sudo apt-get install python3-tk
+ - Para instalação da Matplotlib de o comando sudo apt-get install python3-matplotlib [link para pacotes linux](https://matplotlib.org/stable/users/installing.html#linux-package-manager)
+ - Para instalar o pacote Python-louven de o comando pip3 install python-louvain
+ - Para instalar o pacote NetworkX de o comando pip3 install networkx
+   
+* Obs1: Ocorrendo problemas na instalação do tkinter para a versão linux [Link stackoverflow com explicação](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)
+
+* Obs2: Ocorrendo erro na instalação do tkinter seguir tutorial neste [link](https://tkdocs.com/tutorial/install.html)
 
 ## Bibliotecas e Pacotes
 - Preve introdução
