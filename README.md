@@ -13,13 +13,13 @@
  - Para instalação da Matplotlib de o comando sudo apt-get install python3-matplotlib [link para pacotes linux](https://matplotlib.org/stable/users/installing.html#linux-package-manager)
  - Para instalar o pacote Python-louven de o comando pip3 install python-louvain
  - Para instalar o pacote NetworkX de o comando pip3 install networkx
-   
+
 * Obs1: Ocorrendo problemas na instalação do tkinter para a versão linux [Link stackoverflow com explicação](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)
 
 * Obs2: Ocorrendo erro na instalação do tkinter seguir tutorial neste [link](https://tkdocs.com/tutorial/install.html)
 
 ## Bibliotecas e Pacotes
-- Preve introdução
+- Breve introdução
 
 ### Tkinter
 - O pacote tkinter (“interface Tk”) é a interface Python padrão para o kit de ferramentas Tk GUI. Tanto o Tk quanto o tkinter estão disponíveis na maioria das plataformas Unix, bem como em sistemas Windows. (Tk em si não faz parte do Python; é mantido no ActiveState.)
