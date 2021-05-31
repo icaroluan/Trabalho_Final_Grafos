@@ -3,7 +3,6 @@ from tkinter import messagebox
 import tkinter as tk
 from matplotlib import pyplot as plt
 from community import community_louvain
-#from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import networkx as nx
 
 
