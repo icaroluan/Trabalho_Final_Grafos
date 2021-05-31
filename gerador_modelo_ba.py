@@ -66,7 +66,7 @@ def _position_nodes(g, partition, **kwargs):
 
     return pos
 
-def generate_pa(n, m, seed):
+def generate_ba(n, m, seed):
     if check_N_M(n,m):
         messagebox.showinfo('Informação','Modelo de entrada padrão n = {0}, m = {1}'.format(50,1))
         return nx.generators.random_graphs.barabasi_albert_graph(50, 1, seed)
@@ -153,7 +153,7 @@ class Window:
             return None
 
     def plot_values(self):
-        G_pa = generate_pa(self.n, self.m, self.seed)
+        G_pa = generate_ba(self.n, self.m, self.seed)
         plot(G_pa, self.seed, self.n, self.m)
 
         return None
