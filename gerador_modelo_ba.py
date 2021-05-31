@@ -98,7 +98,7 @@ class Window:
         # Valores iniciais setados
         self.m = 1
         self.n = 50
-        self.seed = 52
+        self.seed = 50
         
         frame_inputs = Frame(self.root)
         frame_labels = Frame(self.root)

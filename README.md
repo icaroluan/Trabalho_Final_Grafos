@@ -64,4 +64,4 @@ Este formato os nós com o grau maior, sendo aqueles com muitas conexões, tende
 
 [Fonte modelo Barabási Albert](https://pt.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model)
 
-[Link Apresentação Youtube](https://www.youtube.com/)
+[Link Apresentação Youtube](https://youtu.be/Nevv6gcbm8k)
