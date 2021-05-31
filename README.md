@@ -5,6 +5,9 @@
 - Depois de o comando no pip install -r requirements.txt
 - Compile o arquivo como o comando python gerador_modelo_ba.py
 
+* Obs: Ocorrendo problemas na instalação do tkinter para a versão linux adicionar faça comando sudo apt-get install python3-tk
+[Link stackoverflow com explicação](https://stackoverflow.com/questions/4783810/install-tkinter-for-python)
+
 ## Bibliotecas e Pacotes
 - Preve introdução
 
